@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '@angular/fire/auth-guard';
+
 import { AppComponent } from './app.component';
 import { CreateUserComponent } from './create-user/create-user';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { TestConnexionComponent } from './test-connexion/test-connexion.component';
 import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'app', component: AppComponent },
