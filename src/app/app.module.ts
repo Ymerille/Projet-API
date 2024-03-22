@@ -14,13 +14,15 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { firebase } from '../environments/environment';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { TestConnexionComponent } from './test-connexion/test-connexion.component';
+import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateUserComponent,
     LoginUserComponent,
-    TestConnexionComponent
+    TestConnexionComponent,
+    TestFirebaseComponent
   ],
   imports: [
     BrowserModule,
