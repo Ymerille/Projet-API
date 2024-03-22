@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "blindtest-71059": {
+      "hosting": {
+        "blindtest": [
+          "blindtest-71059"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "blindtest-71059"
+  }
+}

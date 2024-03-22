@@ -1,0 +1,14 @@
+<div>
+    <form (ngSubmit)="onSubmitForm()">
+      <br>
+      <br>
+      <label for="emailInput">Email : </label>
+      <input type="email" id="emailInput" [(ngModel)] = "userEmail" name="userEmail">
+      <br>
+      <br>
+      <br>
+      <label for="passwordInput">Mot de passe : </label>
+      <input type="password" id="passwordInput" [(ngModel)] = "userPassword" name="userPassword">
+      <button (click)="onContinue()">valider</button>
+    </form>
+</div>
