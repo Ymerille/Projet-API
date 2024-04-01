@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 export const AuthGuard = () => {
   const auth = inject(AuthService);
   const router = inject(Router);
+  console.log(auth.isLogged());
 
   if(!auth.isLogged()) {
       router.navigateByUrl('/login')
@@ -17,18 +18,20 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
+
   public isAuthenticated = false;
 
-  login() {
+  public login() {
     this.isAuthenticated = true;
   }
 
-  logout() {
+  public logout() {
     this.isAuthenticated = false;
   }
 
-  isLogged(): boolean {
+  public isLogged(): boolean {
     return this.isAuthenticated;
   }
 }

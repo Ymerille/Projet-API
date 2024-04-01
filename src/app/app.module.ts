@@ -16,6 +16,8 @@ import { LoginUserComponent } from './login-user/login-user.component';
 import { TestConnexionComponent } from './test-connexion/test-connexion.component';
 import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +34,10 @@ import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
     RouterOutlet, 
     RouterLink, 
     RouterLinkActive, 
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(firebase)), 
     provideAuth(() => getAuth()), 
-    provideFirestore(() => getFirestore()),
+    provideFirestore(() => getFirestore()), //provideFirebaseApp(() => initializeApp({"projectId":"blindtest-71059","appId":"1:433409892438:web:070412168ef63aae30dbf7","storageBucket":"blindtest-71059.appspot.com","apiKey":"AIzaSyCNWYrPoy5Y-mMNIuNETnb6m1_IAd034tw","authDomain":"blindtest-71059.firebaseapp.com","messagingSenderId":"433409892438"})),
   ],
   providers: [
     provideAnimationsAsync(),

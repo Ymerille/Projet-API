@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'createUser', component: CreateUserComponent },
   { path: 'login', component: LoginUserComponent },
   { path: 'test', component: TestConnexionComponent, canActivate: [AuthGuard]},
-  { path: 'city', component: TestFirebaseComponent, canActivate: [AuthGuard]}
+  { path: 'city', component: TestFirebaseComponent}
  
 ];
 
