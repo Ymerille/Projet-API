@@ -19,7 +19,38 @@ export class SpotifyService {
     return this.http.get(`${this.apiURL}/tracks/${trackID}`, {headers});
   }
 
+  getTracks(albumID: string, accessToken: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${accessToken}`
+    });
+    return this.http.get(`${this.apiURL}/tracks?ids=${albumID}`, {headers});
+  }
+
+  getArtist(artistID: string, accessToken: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${accessToken}`
+    });
+    return this.http.get(`${this.apiURL}/artists/${artistID}`, {headers});
+  }
+
+  getPlaylist(playlistID: string, accessToken: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${accessToken}`
+    });
+    return this.http.get(`${this.apiURL}/playlists/${playlistID}`, {headers});
+  }
+
+  getPlaylists(userID: string, accessToken: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${accessToken}`
+    });
+    return this.http.get(`${this.apiURL}/users/${userID}/playlists?limit=20`, {headers});
+  }
+
 }
+
+  
+
 /*
 export class SpotifyService {
   constructor(private http: HttpClient) { }
