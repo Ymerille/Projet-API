@@ -2,7 +2,7 @@ import { inject } from "@angular/core";
 import { Router } from "@angular/router";
 
 export const AuthGuard = () => {
-  const auth = inject(AuthService);
+  const auth = inject(AuthServiceTest);
   const router = inject(Router);
   console.log(auth.isLogged());
 
@@ -19,7 +19,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 
-export class AuthService {
+export class AuthServiceTest {
 
   public isAuthenticated = false;
 

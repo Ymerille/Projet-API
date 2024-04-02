@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Auth, UserCredential, browserLocalPersistence, getAuth, setPersistence } from '@angular/fire/auth';
 import { Router } from '@angular/router'
-import { AuthService } from '../auth.guard'
+import { AuthService } from '../services/auth.service';
 
 import { signInWithEmailAndPassword, browserSessionPersistence } from '@angular/fire/auth'
 
@@ -14,44 +14,50 @@ import { signInWithEmailAndPassword, browserSessionPersistence } from '@angular/
 
 
 export class LoginUserComponent {
-    public userEmail!: string;
-    public userPassword! : string;
+    constructor(
+        public authService: AuthService
+    ) {}
 
-    private auth: Auth = inject(Auth);
+    ngOnInit() {}
 
-    public log: AuthService = inject(AuthService);
+    // public userEmail!: string;
+    // public userPassword! : string;
+
+    // private auth: Auth = inject(Auth);
+
+    // public log: AuthService = inject(AuthService);
     
-    constructor(private router: Router) {}
+    // constructor(private router: Router) {}
 
-    ngOnInit(): void {
-    }
-    onContinue(): void {
+    // ngOnInit(): void {
+    // }
+    // onContinue(): void {
         
-        this.router.navigateByUrl('login')
-    }
-
-    // login(email: string, password: string): Promise<UserCredential> {
-    //     return setPersistence(this.auth, browserLocalPersistence).then(() =>
-    //       signInWithEmailAndPassword(this.auth, email, password)
-    //     );
+    //     this.router.navigateByUrl('login')
     // }
 
-    onSubmitForm(): void {
-        console.log(this.userEmail);
-        signInWithEmailAndPassword(this.auth, this.userEmail, this.userPassword)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(user);
-            this.log.login();
-            console.log(this.log.isLogged())
+    // // login(email: string, password: string): Promise<UserCredential> {
+    // //     return setPersistence(this.auth, browserLocalPersistence).then(() =>
+    // //       signInWithEmailAndPassword(this.auth, email, password)
+    // //     );
+    // // }
+
+    // onSubmitForm(): void {
+    //     console.log(this.userEmail);
+    //     signInWithEmailAndPassword(this.auth, this.userEmail, this.userPassword)
+    //     .then((userCredential) => {
+    //         const user = userCredential.user;
+    //         console.log(user);
+    //         this.log.login();
+    //         console.log(this.log.isLogged())
             
-        })
+    //     })
         
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log("code erreur : ", errorCode, "message : ", errorMessage);
-        });
+    //     .catch((error) => {
+    //         const errorCode = error.code;
+    //         const errorMessage = error.message;
+    //         console.log("code erreur : ", errorCode, "message : ", errorMessage);
+    //     });
         
-    }
+    // }
 }

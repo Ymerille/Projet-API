@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { FormsModule } from '@angular/forms';
-import { CreateUserComponent } from './create-user/create-user';
+import { CreateUserComponent } from './create-user/create-user.component';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -17,12 +17,16 @@ import { TestConnexionComponent } from './test-connexion/test-connexion.componen
 import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateUserComponent,
     LoginUserComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
     TestConnexionComponent,
     TestFirebaseComponent
   ],

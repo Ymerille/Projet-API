@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <form (ngSubmit)="onSubmitForm()">
       <br>
       <br>
@@ -11,4 +11,20 @@
       <input type="password" id="passwordInput" [(ngModel)] = "userPassword" name="userPassword">
       <button (click)="onContinue()">valider</button>
     </form>
-</div>
+</div> -->
+
+<label for="emailInput">Email : </label>
+<input type="email" #userEmail />
+<br>
+<br>
+<br>
+<label for="passwordInput">Mot de passe : </label>
+<input type="password" #userPassword />
+<br>
+<br>
+<br>
+<input
+  type="button"
+  (click)="authService.signIn(userEmail.value, userPassword.value)"
+  value="Se connecter"
+/>
