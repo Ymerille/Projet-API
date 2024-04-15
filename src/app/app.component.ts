@@ -9,27 +9,31 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 
 export class AppComponent implements OnInit{
   title = 'blindtest';
+  
   authenticated: boolean = false;
-  accessToken: string = 'BQBnGcOihlh9t24BffYnZKmFogvV24ykYfxovGQwU66HT35nU_hJG_g7A0BbydlGoTupoUvvTbKMZ0inFvJKJyxU9KQGATw0wnkl1f4tpFQs_rasgDD2S5MpiIrxdId1-zVCAU0LvmnKLAw1kupQeDmm-36cqAtmuPTVcPZa-P1hv1ljgvQGF-b2EV7_tn7Tcjrt';
   //accessToken: any = '';
+
+  private accessToken = this.spotifyAuthService.getAccessTokenFromLocalStorage();
 
   constructor (
     public spotifyService: SpotifyService,
-    private spotifyAuthService : SpotifyAuthService
+    private spotifyAuthService : SpotifyAuthService,
   ) {}
 
   ngOnInit(): void {
-      this.getTrack();
-      //this.getPlaylist();
+      //console.log(this.accessToken);
+      //this.getTrack();
+      this.getPlaylist();
       //this.getPlaylists();
       //this.getArtist();
       //this.getTracks();
       //this.authenticate();
+      this.spotifyService.getProfile(this.accessToken);
   }
 
   // async authenticate(): Promise<void> {
@@ -91,5 +95,6 @@ export class AppComponent implements OnInit{
       console.log(a);
     })
   }
+
 }
 

@@ -1,0 +1,33 @@
+<body>
+  <app-header></app-header>
+  <!-- <mat-list>
+    <mat-list-item>PROFIL</mat-list-item>
+    <mat-list-item>Nom : {{lastName}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Prénom : {{firstName}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>Email : {{email}}</mat-list-item>
+  </mat-list> -->
+  
+  <div class="form">
+    <mat-card>
+      <mat-card-content>Entrez l'URL de la playlist pour jouer !</mat-card-content>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>URL de la playlist</mat-label>
+          <input matInput placeholder="ex: https://open.spotify.com/playlist/3mQxm4Se2p4ePgqmQmiNvV?si=53a518f01c394778" #playlistURL>
+        </mat-form-field>
+      </form>
+      <section>
+        <div class="example-button-row">
+          <button mat-flat-button color="primary" (click)="submitPlaylistURL(playlistURL.value)">C'est parti !</button>
+        </div>
+      </section>
+  </mat-card>
+  </div>
+</body>
+
+
+
+
+  

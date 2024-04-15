@@ -1,30 +1,24 @@
-<!-- <div>
-    <form (ngSubmit)="onSubmitForm()">
-      <br>
-      <br>
-      <label for="emailInput">Email : </label>
-      <input type="email" id="emailInput" [(ngModel)] = "userEmail" name="userEmail">
-      <br>
-      <br>
-      <br>
-      <label for="passwordInput">Mot de passe : </label>
-      <input type="password" id="passwordInput" [(ngModel)] = "userPassword" name="userPassword">
-      <button (click)="onContinue()">valider</button>
-    </form>
-</div> -->
+<body>
+  <app-header></app-header>
+  <div class="login">
+    <mat-card>
+      <mat-card-content>Connexion : </mat-card-content>
+      <mat-form-field>
+        <mat-label>Email : </mat-label>
+        <input matInput type="email" #userEmail>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Mot de passe : </mat-label>
+        <input matInput type="password" #userPassword>
+      </mat-form-field>
+      <section>
+        <a href="/forgot-password"><p>Mot de passe oublié ?</p></a>
+        <p>Pas de compte ? <a href="/create-user">Cliquez ici !</a></p>
+        <div class="example-button-row">
+          <button mat-flat-button color="primary" (click)="authService.signIn(userEmail.value, userPassword.value)">Se connecter</button>
+        </div>
+      </section>
+    </mat-card>
+  </div>
+</body>
 
-<label for="emailInput">Email : </label>
-<input type="email" #userEmail />
-<br>
-<br>
-<br>
-<label for="passwordInput">Mot de passe : </label>
-<input type="password" #userPassword />
-<br>
-<br>
-<br>
-<input
-  type="button"
-  (click)="authService.signIn(userEmail.value, userPassword.value)"
-  value="Se connecter"
-/>

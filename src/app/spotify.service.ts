@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Spotify } from './spotify';
+import { SpotifyAuthService } from './spotify-auth.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,8 @@ import { Spotify } from './spotify';
 export class SpotifyService {
   private apiURL = 'https://api.spotify.com/v1';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private spotifyAuthService: SpotifyAuthService) {
+  }
 
   getTrack(trackID: string, accessToken: string): Observable<any> {
     const headers = new HttpHeaders({
@@ -46,6 +49,13 @@ export class SpotifyService {
     });
     return this.http.get(`${this.apiURL}/users/${userID}/playlists?limit=20`, {headers});
   }
+
+  getProfile(accessToken: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${accessToken}`
+    });
+    return this.http.get(`${this.apiURL}/me`, {headers});
+}
 
 }
 

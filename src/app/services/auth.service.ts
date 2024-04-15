@@ -9,8 +9,11 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
+  updateEmail,
+  updatePassword,
 } from '@angular/fire/auth';
 import { Firestore, doc, getDoc, setDoc } from '@angular/fire/firestore';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -36,7 +39,7 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
         if (userCredential.user) {
-          this.router.navigate(['/app']);
+          this.router.navigate(['/spotify-login']);
         }
       })
       .catch((error) => {
@@ -87,6 +90,32 @@ export class AuthService {
       });
   }
 
+  public changePassword(newPassword: string) {
+    const user = this.auth.currentUser;
+    if (user) {
+      updatePassword(user, newPassword)
+      .then(() => {
+        window.alert('Mot de passe modifié !');
+      })
+      .catch((error) => {
+        window.alert(error);
+      });
+    }
+  }
+
+  public changeEmail(newEmail: string) {
+    const user = this.auth.currentUser;
+    if (user) {
+      updateEmail(user, newEmail)
+      .then(() => {
+        window.alert('Email modifié !');
+      })
+      .catch((error) => {
+        window.alert(error);
+      });
+    }
+  }
+
   public setUserData(
     userUid: string,
     userEmail: string,
@@ -106,7 +135,7 @@ export class AuthService {
 
   public signOut() {
     return signOut(this.auth).then(() => {
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['home']);
     });
   }
 }

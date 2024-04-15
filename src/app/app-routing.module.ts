@@ -9,19 +9,40 @@ import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
 //import { AuthGuard } from './auth.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard'
+import { HomeGameComponent } from './home-game/home-game.component';
+import { SpotifyLoginComponent } from './spotify-login/spotify-login.component';
+import { SpotifyCallbackComponent } from './spotify-callback/spotify-callback.component';
+import { GamePlayComponent } from './game-play/game-play.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageConnecterComponent } from './home-page-connecter/home-page-connecter.component';
+import { PlaylistutilisateurComponent } from './playlistutilisateur/playlistutilisateur.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectUnauthorizedToHome = () => redirectUnauthorizedTo(['home']);
+
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'app', component: AppComponent },
-  { path: 'createUser', component: CreateUserComponent },
+  { path: 'create-user', component: CreateUserComponent },
   { path: 'login', component: LoginUserComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'verify-email-address', component: ForgotPasswordComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'test', component: TestConnexionComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
-  { path: 'city', component: TestFirebaseComponent}
- 
+  { path: 'city', component: TestFirebaseComponent },
+  { path: 'home-game', component: HomeGameComponent },
+  { path: 'spotify-login', component: SpotifyLoginComponent },
+  { path: 'callback', component: SpotifyCallbackComponent },
+  { path: 'game', component: GamePlayComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'home', component: HomePageComponent},
+  { path: 'home-connecter', component: HomePageConnecterComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToHome }},
+  { path: 'playlist', component: PlaylistutilisateurComponent},
+
+
+
 ];
 
 @NgModule({

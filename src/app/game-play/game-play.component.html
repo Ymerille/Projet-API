@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BlindTest</title>
+</head>
+<body>
+    <h1>BlindTest</h1>
+
+    <audio id="audioPlayer" controls>
+        <source [src]="trackURL" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+    <button id="playButton" (click)="loadAndPlayNextTrack()">Vérifier et passer à la chanson suivante</button>
+
+    <br>
+    <br>
+    <label for="textInput">Entrez un artiste : </label>
+    <input type="text" id="input_artist" [(ngModel)]="input_artist">
+
+    <label for="textInput">Entrez un titre : </label>
+    <input type="text" id="input_song" [(ngModel)]="input_song">
+
+    <div id="resultText"></div>
+
+    <div id="reponsecorrecte"></div>
+
+    <br>
+
+
+</body>
+</html>
