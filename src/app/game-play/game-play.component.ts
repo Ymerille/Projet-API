@@ -3,7 +3,7 @@ import { SpotifyService } from '../spotify.service';
 import { PlaylistService } from '../services/playlist.service';
 import { SpotifyAuthService } from '../spotify-auth.service';
 import { Router } from '@angular/router';
-
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-game-play',
   templateUrl: './game-play.component.html',
@@ -26,11 +26,9 @@ export class GamePlayComponent implements OnInit {
             ) {}
 
   ngOnInit(): void {
-    //this.loadAndPlayNextTrack();
+    this.loadAndPlayNextTrack();
   }
-
-
-
+  
 
   public loadAndPlayNextTrack() {
     const audioPlayer = document.getElementById('audioPlayer');
@@ -54,11 +52,15 @@ export class GamePlayComponent implements OnInit {
         }
       //this.indice();
       this.VerifText();
+
+      if (this.total_tracks == 5) {
+        this.router.navigate(['/score'], { queryParams: { score: this.score } });
+      }
       
   }
   else{
-    this.VerifText();
-    this.router.navigate(['/score'], { queryParams: { score: this.score } });
+    // this.VerifText();
+    // this.router.navigate(['/score'], { queryParams: { score: this.score } });
 
   }
   this.total_tracks++;

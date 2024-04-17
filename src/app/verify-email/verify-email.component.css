@@ -29,6 +29,7 @@ body {
     button {
       padding: 10px 20px;
       height: 7vh;
+      background-color: #4CAF50 !important;
     }
     
     button:hover {

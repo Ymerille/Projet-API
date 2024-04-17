@@ -1,8 +1,38 @@
-<h3>Create</h3>
-<form (ngSubmit)="onCreate()">
-  <input type="text" [(ngModel)]="name" name="name" placeholder="Name" required>
-  <button type="submit" value="Submit">Submit</button>
-</form>
-<ul>
-  <li *ngFor="let a of bname">{{a}}</li>
-</ul> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blindtest App</title>
+</head>
+
+<app-header></app-header>
+
+<body>
+  <div class="welcome-container">
+      <h1>Votre page des favoris</h1>
+  </div>
+  <div class="container">
+      <div class="left-box">
+          <h2>entrez l'url de la playlist que vous souhaitez ajouter au favoris</h2>
+          <section class="create-section">
+            <form class="create-form" (ngSubmit)="onCreate()">
+              <input class="create-input" type="text" [(ngModel)]="name" name="name" placeholder="Enter Name" required>
+              <button class="create-button" type="submit">Submit</button>
+            </form>
+          </section>
+      </div>
+      <div class="right-box">
+        <section class="playlist-section">
+          <h3>Vos playlists en un clic</h3>
+          <ul class="playlist-list">
+            <li *ngFor="let playlist of bname">
+              <button class="playlist-button" mat-flat-button color="primary" (click)="submitPlaylistURL(playlist)">{{playlist}}</button>
+            </li>
+          </ul>
+        </section>
+      </div>
+  </div>
+
+</body>
+</html>

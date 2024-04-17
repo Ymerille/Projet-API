@@ -43,20 +43,5 @@ export class ProfileComponent {
 
   }
 
-    // //const docRef = doc(this.firestore, "users", "ophpVdwF3qMJplfO121pHB6GnPp1");
-    // //const docSnap = await getDoc(docRef);
-
-    // const docSnap = authService.userData;
-
-    // if(docSnap.exists()) {
-    //   console.log("Document data:", docSnap.data());
-    //   this.lastName = docSnap.data()['lastName'];
-    //   this.firstName = docSnap.data()['firstName'];
-    //   this.email = docSnap.data()['email'];
-  
-    // } else {
-    //   // docSnap.data() will be undefined in this case
-    //   console.log("No such document!");
-    // }
-  }
+}
 

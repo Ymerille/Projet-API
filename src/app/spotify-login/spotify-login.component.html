@@ -1,1 +1,14 @@
-<button (click)="login()">Se connecter avec Spotify</button>
+<!-- <button (click)="login()">Se connecter avec Spotify</button> -->
+<body>
+    <app-header></app-header>
+    <div class="login">
+      <mat-card>
+        <mat-card-content>Connexion avec Spotify : </mat-card-content>
+        <section>
+          <div class="example-button-row">
+            <button mat-flat-button color="primary" (click)="login()">Se connecter avec Spotify</button>
+          </div>
+        </section>
+      </mat-card>
+    </div>
+  </body>

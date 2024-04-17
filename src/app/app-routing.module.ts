@@ -6,7 +6,6 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { TestConnexionComponent } from './test-connexion/test-connexion.component';
 import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
-//import { AuthGuard } from './auth.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard'
 import { HomeGameComponent } from './home-game/home-game.component';
@@ -32,16 +31,13 @@ const routes: Routes = [
   { path: 'login', component: LoginUserComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
-  { path: 'test', component: TestConnexionComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
-  { path: 'city', component: TestFirebaseComponent },
-  { path: 'home-game', component: HomeGameComponent },
-  { path: 'spotify-login', component: SpotifyLoginComponent },
-  { path: 'callback', component: SpotifyCallbackComponent },
-  { path: 'game', component: GamePlayComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'home', component: HomePageComponent},
-  { path: 'home-connecter', component: HomePageConnecterComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToHome }},
-  { path: 'playlist', component: PlaylistutilisateurComponent},
+  { path: 'home-game', component: HomeGameComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToHome } },
+  { path: 'spotify-login', component: SpotifyLoginComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToHome } },
+  { path: 'callback', component: SpotifyCallbackComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToHome } },
+  { path: 'game', component: GamePlayComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToHome } },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToHome } },
+  { path: 'home', component: HomePageComponent },
+  { path: 'playlist', component: PlaylistutilisateurComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToHome }},
   { path: 'score', component: ScorePageComponent},
 
 

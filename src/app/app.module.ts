@@ -29,7 +29,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
-import { SidebarComponent } from './sidebar/sidebar.component'; 
 import { MatSidenav } from '@angular/material/sidenav';
 import { HeaderComponent } from './header/header.component';
 import { MatDividerModule } from '@angular/material/divider';
@@ -42,6 +41,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HomePageConnecterComponent } from './home-page-connecter/home-page-connecter.component';
 import { PlaylistutilisateurComponent } from './playlistutilisateur/playlistutilisateur.component';
 import { ScorePageComponent } from './score-page/score-page.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +54,6 @@ import { ScorePageComponent } from './score-page/score-page.component';
     TestConnexionComponent,
     TestFirebaseComponent,
     HomeGameComponent,
-    SidebarComponent,
     HeaderComponent,
     SpotifyLoginComponent,
     SpotifyCallbackComponent,
@@ -83,6 +83,7 @@ import { ScorePageComponent } from './score-page/score-page.component';
     MatSidenav,
     MatDividerModule,
     MatCardModule,
+    MatDialogModule,
     provideFirebaseApp(() => initializeApp(firebase)), 
     provideAuth(() => getAuth()), 
     provideFirestore(() => getFirestore()), //provideFirebaseApp(() => initializeApp({"projectId":"blindtest-71059","appId":"1:433409892438:web:070412168ef63aae30dbf7","storageBucket":"blindtest-71059.appspot.com","apiKey":"AIzaSyCNWYrPoy5Y-mMNIuNETnb6m1_IAd034tw","authDomain":"blindtest-71059.firebaseapp.com","messagingSenderId":"433409892438"})),

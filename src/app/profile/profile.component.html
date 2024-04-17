@@ -8,9 +8,12 @@
           <mat-card-content class="text">Prénom : {{firstName}}
           </mat-card-content>
           <mat-card-content class="text">Email : {{email}}
-              <button mat-flat-button color="primary">Modifier l'email</button>
-              <button mat-flat-button color="primary">Modifier le mot de passe</button>
           </mat-card-content>
+          <section>
+            <div class="example-button-row">
+              <button mat-flat-button color="primary" (click)="authService.signOut()">Se déconnecter</button>
+            </div>
+          </section>
         </mat-card>
       </div>
 </body>

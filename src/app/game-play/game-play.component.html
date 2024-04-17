@@ -2,36 +2,44 @@
 <html>
 <head>
     <title>BlindTest</title>
+   
 </head>
 <body>
+    <app-header></app-header>
     <h1>BlindTest</h1>
-
-    <!-- Ceci est un commentaire HTML -->
+   
     <div id="audioContainer">
         <!-- Ceci est un autre commentaire HTML -->
         <audio id="audioPlayer" controls>
             <source [src]="trackURL" type="audio/mpeg">
             Votre navigateur ne supporte pas l'élément audio.
         </audio>
-        <button id="verifyButton" (click)="loadAndPlayNextTrack()">Vérifier et passer à la chanson suivante</button>
+        <button id="verifyButton" class="start-button" (click)="loadAndPlayNextTrack()">Vérifier et passer à la chanson suivante</button>
     </div>
   
     <div>
-        <label for="input_song">Titre de la chanson:</label>
-        <input type="text" id="input_song" [(ngModel)]="input_song">
+        <mat-form-field class="mat-form-field">
+            <mat-label for="input_song">Entrez le titre</mat-label>
+            <input matInput type="text" id="input_song" [(ngModel)]="input_song" class="mat-input">
+        </mat-form-field>
     </div>
-  
+   
     <div>
-        <label for="input_artist">Artiste:</label>
-        <input type="text" id="input_artist" [(ngModel)]="input_artist">
+        <mat-form-field class="mat-form-field">
+            <mat-label for="input_artist">Entrez l'artiste</mat-label>
+            <input matInput type="text" id="input_artist" [(ngModel)]="input_artist" class="mat-input">
+        </mat-form-field>
     </div>
   
     <div id="resultText"></div>
 
     <div id="reponsecorrecte"></div>
-    <!-- Mettez ici les mises à jour et le score -->
 
+<app-score-page><button></button></app-score-page>
 
+   
+</body>
+</html>
 
    <!--
    
@@ -56,5 +64,3 @@
     <br>
 
 -->
-</body>
-</html>
