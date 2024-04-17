@@ -41,6 +41,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HomePageConnecterComponent } from './home-page-connecter/home-page-connecter.component';
 import { PlaylistutilisateurComponent } from './playlistutilisateur/playlistutilisateur.component';
+import { ScorePageComponent } from './score-page/score-page.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { PlaylistutilisateurComponent } from './playlistutilisateur/playlistutil
     HomePageComponent,
     HomePageConnecterComponent,
     PlaylistutilisateurComponent,
+    ScorePageComponent,
   ],
   imports: [
     BrowserModule,

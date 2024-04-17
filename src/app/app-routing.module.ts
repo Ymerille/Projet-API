@@ -18,6 +18,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HomePageConnecterComponent } from './home-page-connecter/home-page-connecter.component';
 import { PlaylistutilisateurComponent } from './playlistutilisateur/playlistutilisateur.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { ScorePageComponent } from './score-page/score-page.component';
+
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectUnauthorizedToHome = () => redirectUnauthorizedTo(['home']);
@@ -40,6 +42,8 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent},
   { path: 'home-connecter', component: HomePageConnecterComponent, canActivate: [AuthGuard], data: { authGuardPipe: redirectUnauthorizedToHome }},
   { path: 'playlist', component: PlaylistutilisateurComponent},
+  { path: 'score', component: ScorePageComponent},
+
 
 
 

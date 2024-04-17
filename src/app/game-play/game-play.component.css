@@ -7,3 +7,35 @@
 	left: 0;
 	z-index: 9999; /* Peut être important si vous avez un menu en position fixe */
 }
+#audioContainer {
+	text-align: center; /* Centrer le contenu horizontalement */
+  }
+  
+  #audioPlayer {
+	margin: 0 auto; /* Centrer l'élément audio */
+  }
+  
+  #verifyButton {
+	display: inline-block; /* Afficher le bouton sur la même ligne que l'audio */
+	margin-left: 10px; /* Marge à gauche pour séparer du lecteur audio */
+	padding: 10px 20px; /* Rembourrage pour le bouton */
+	background-color: #007bff; /* Couleur de fond */
+	color: #fff; /* Couleur du texte */
+	border: none; /* Supprimer la bordure */
+	border-radius: 5px; /* Coins arrondis */
+	cursor: pointer; /* Curseur pointeur au survol */
+	transition: background-color 0.3s; /* Transition fluide pour le changement de couleur de fond */
+  }
+  
+  #verifyButton:hover {
+	background-color: #0056b3; /* Couleur de fond au survol */
+  }
+  
+  label {
+	display: block; /* Afficher les labels sur une nouvelle ligne */
+	margin-top: 10px; /* Marge en haut pour séparer les labels */
+  }
+  
+  #resultText {
+	margin-top: 20px; /* Marge en haut pour séparer les mises à jour et le score */
+  }

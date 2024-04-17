@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
 import { PlaylistService } from '../services/playlist.service';
 import { SpotifyAuthService } from '../spotify-auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game-play',
   templateUrl: './game-play.component.html',
-  styleUrls: ['./game-play.component.css']
+  styleUrl: './game-play.component.css'
 })
 export class GamePlayComponent implements OnInit {
   //accessToken = 'BQAAPSLuKEZOiHRNLYXLksZr0LrbTyyTy2NnMfqm75loRwVKV7_BlmK-NOOqcn5zld7iWWf5rpfCFYIMGEi8-q-J8TM82coP7OyjPXCj3pJSMr8dqTZwMJ76hri7ezfgDgSRkAgMjhYN68WS1A_JvcJI9Lqq7AwR2pPtAjyyYZ4sNS9tZklb0boWgUhHRjSmipr5';
@@ -16,14 +17,16 @@ export class GamePlayComponent implements OnInit {
   currentTrackIndex: number = 0;
   trackURL: string = '';
   score: number = 0;
+  total_tracks: number = 0;
 
   constructor(private spotifyService: SpotifyService,
               private playlistService: PlaylistService,
               private spotifyAuthService: SpotifyAuthService,
+              private router: Router
             ) {}
 
   ngOnInit(): void {
-    this.loadAndPlayNextTrack();
+    //this.loadAndPlayNextTrack();
   }
 
 
@@ -35,19 +38,30 @@ export class GamePlayComponent implements OnInit {
     //const playlistID = '37i9dQZF1DWXLbJb1PtkXq?si=819adf1d0a7c4895';
     const playlistURL = this.playlistService.getPlaylistURL();
     console.log(playlistURL);
+    
     const playlistID = this.playlistService.getPlaylistID(playlistURL);
     console.log(playlistID);
+
     this.spotifyService.getPlaylist(playlistID, this.accessToken)
       .subscribe(data => {
         
         console.log(data);
+        if(this.total_tracks < 5 ){
         const trackURL = data.tracks.items[this.currentTrackIndex].track.preview_url; 
   
         if(audioPlayer){
         audioPlayer.setAttribute('src', trackURL);
-      }
+        }
       //this.indice();
       this.VerifText();
+      
+  }
+  else{
+    this.VerifText();
+    this.router.navigate(['/score'], { queryParams: { score: this.score } });
+
+  }
+  this.total_tracks++;
       });
   }
 
@@ -118,26 +132,27 @@ if (this.currentTrackIndex === 0) {
           this.score += 1;
           console.log("Seul le titre est correct : " + this.score);
           this.updateScoreText(this.score,"Seul le titre est correct !");
-      } else {
-          console.log("Pas le bon titre");
-         
-      }
+      } 
 
       // Vérification si seulement l'artiste est correct
       if (artistNames.includes(this.input_artist.toLowerCase()) && this.input_artist.toLowerCase() != '') {
           this.score += 1;
           console.log("Seul l'artiste est correct : " + this.score);
           this.updateScoreText(this.score,"Seul l'artiste est correct !");
-      } else {
-          console.log("Pas le bon artiste");
-          
-          
+      } 
+
+    
+      else{
+        this.updateScoreText(this.score,"L'artiste et le titre sont faux !");
       }
 
       //affichage de la réponse
 
       this.artiste_song_correcte(artistNames,trackName);
   }
+
+
+
 }
 
 // Incrémentation de l'indice après le traitement à l'indice currentindex

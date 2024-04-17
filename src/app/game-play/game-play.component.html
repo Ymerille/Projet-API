@@ -6,11 +6,40 @@
 <body>
     <h1>BlindTest</h1>
 
-    <audio id="audioPlayer" controls>
+    <!-- Ceci est un commentaire HTML -->
+    <div id="audioContainer">
+        <!-- Ceci est un autre commentaire HTML -->
+        <audio id="audioPlayer" controls>
+            <source [src]="trackURL" type="audio/mpeg">
+            Votre navigateur ne supporte pas l'élément audio.
+        </audio>
+        <button id="verifyButton" (click)="loadAndPlayNextTrack()">Vérifier et passer à la chanson suivante</button>
+    </div>
+  
+    <div>
+        <label for="input_song">Titre de la chanson:</label>
+        <input type="text" id="input_song" [(ngModel)]="input_song">
+    </div>
+  
+    <div>
+        <label for="input_artist">Artiste:</label>
+        <input type="text" id="input_artist" [(ngModel)]="input_artist">
+    </div>
+  
+    <div id="resultText"></div>
+
+    <div id="reponsecorrecte"></div>
+    <!-- Mettez ici les mises à jour et le score -->
+
+
+
+   <!--
+   
+ <audio id="audioPlayer" controls>
         <source [src]="trackURL" type="audio/mpeg">
         Votre navigateur ne supporte pas l'élément audio.
     </audio>
-    <button id="playButton" (click)="loadAndPlayNextTrack()">Vérifier et passer à la chanson suivante</button>
+    <button id="verifyButton" (click)="loadAndPlayNextTrack()">Vérifier et passer à la chanson suivante</button>
 
     <br>
     <br>
@@ -26,6 +55,6 @@
 
     <br>
 
-
+-->
 </body>
 </html>
