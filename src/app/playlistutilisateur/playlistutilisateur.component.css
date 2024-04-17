@@ -1,96 +1,95 @@
 .welcome-container {
-    margin-bottom: 20px;
-    text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .container {
-    max-width: 800px;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: flex-start;
-    margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-start;
+  margin: 0 auto;
 }
 
 .left-box {
-    flex: 1;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 10px 0 0 10px;
-    margin-right: 20px;
+  flex: 1;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px 0 0 10px;
+  margin-right: 20px;
 }
 .right-box {
-    flex: 1;
-    padding: 20px;
-    border-radius: 0 10px 10px 0;
+  flex: 1;
+  padding: 20px;
+  border-radius: 0 10px 10px 0;
 }
 h1 {
-    color: #333;
+  color: #333;
 }
 p {
-    color: #666;
-    margin-bottom: 20px;
+  color: #666;
+  margin-bottom: 20px;
 }
 .start-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 30px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-decoration: none;
-    display: block;
-    margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
 }
 .start-button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .create-section {
-    margin-bottom: 20px;
-  }
-  
-  .create-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .create-input {
-    width: 300px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .create-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .create-button:hover {
-    background-color: #45a049;
-  }
-  
-  .playlist-section {
-    margin-top: 20px;
-  }
-  
-  .playlist-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .playlist-button {
-    margin-bottom: 5px;
-  }
-  
+  margin-bottom: 20px;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background-color: #45a049;
+}
+
+.playlist-section {
+  margin-top: 20px;
+}
+
+.playlist-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.playlist-button {
+  margin-bottom: 5px;
+}

@@ -1,27 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blindtest App</title>
-</head>
-<app-header></app-header>
-<body>
-    <div class="welcome-container"> <!-- New wrapping div -->
-        <h1>Welcome to the Blindtest App</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blindtest Spotify</title>
+  </head>
+  <app-header></app-header>
+  <body>
+    <div class="welcome-container">
+      <h1>Bienvenue sur le Blindtest Spotify</h1>
     </div>
     <div class="container">
-        <div class="left-box">
-            <h2>What is a Blindtest?</h2>
-            <p>A blindtest is a music quiz where participants listen to music clips without knowing the titles or artists. They have to guess the song or artist based solely on the audio.</p>
-        </div>
-        <div class="right-box">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/pFptt7Cargc?si=mgQ7HmYRgkfAQH0g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+      <div class="left-box">
+        <h1>Présentation</h1>
+        <p>
+          Ce site internet vous permet, en crée un compte sur notre platform et
+          en vous connectant à votre compte spotify, de réaliser des Blindtest
+          avec n'importe quelle playliste spotify.
+        </p>
+      </div>
+      <div class="right-box">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/pFptt7Cargc?si=mgQ7HmYRgkfAQH0g"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
-    <div>
-        <p>Test your music knowledge!</p>
-        <button type="button" class="start-button" (click)="onLogin();">Lancer une partie</button>
+    <p></p>
+    <div class="container">
+      <div class="right-box">
+        <h1>Mettez vos connaissance musical à l'épreuve !</h1>
+        <button
+          type="button"
+          class="start-button"
+          *ngIf="!isLoggedIn()"
+          (click)="onLogin()"
+        >
+          Lancer une partie
+        </button>
+        <button
+          type="button"
+          class="start-button"
+          *ngIf="isLoggedIn()"
+          (click)="onJOUER()"
+        >
+          Lancer une partie
+        </button>
+      </div>
+      <div class="left-box">
+        <h1>Plus de fonctionalités</h1>
+        <p>
+          Vous avez aussi la possibilitée d'enregistrer dans une page de favoris
+          des playliste pour lancer le blindetest associer d'un clique !
+        </p>
+      </div>
     </div>
-</body>
+  </body>
 </html>

@@ -1,43 +1,71 @@
-#progress {
-    background-color: #839c49;
-    height: 3px;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999; /* Peut être important si vous avez un menu en position fixe */
+body {
+  background-color: #f4f4f4;
+  margin: 0;
 }
 
-#audioContainer {
-    text-align: center; /* Centrer le contenu horizontalement */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  margin-top: 20vh;
 }
 
-#audioPlayer {
-    margin: 0 auto; /* Centrer l'élément audio */
+.content-box {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-mat-form-field {
-    width: 100%;
-  }
-
-#verifyButton {
-    background-color: #4CAF50 !important;
-    color: white;
-    padding: 15px 30px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-decoration: none;
-    display: block;
-    margin-top: 20px;
+.audio-box {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-label {
-    display: block; /* Afficher les labels sur une nouvelle ligne */
-    margin-top: 10px; /* Marge en haut pour séparer les labels */
+.label-box {
+  margin-bottom: 20px;
 }
 
-#resultText {
-    margin-top: 20px; /* Marge en haut pour séparer les mises à jour et le score */
+.mat-form-field {
+  width: 100%;
+}
+
+.start-button {
+  padding: 10px 20px;
+  background-color: #4caf50 !important;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.start-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.score-content {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 45px;
+}
+
+.score-box > div {
+  margin-bottom: 10px;
+}
+
+.game-end-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.game-end-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.centered-text {
+  text-align: center;
 }

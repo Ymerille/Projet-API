@@ -13,15 +13,13 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { firebase } from '../environments/environment';
 import { LoginUserComponent } from './login-user/login-user.component';
-import { TestConnexionComponent } from './test-connexion/test-connexion.component';
-import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { HomeGameComponent } from './home-game/home-game.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input'; 
+import { MatInputModule } from '@angular/material/input';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -38,10 +36,8 @@ import { MatCardModule } from '@angular/material/card';
 import { GamePlayComponent } from './game-play/game-play.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { HomePageConnecterComponent } from './home-page-connecter/home-page-connecter.component';
 import { PlaylistutilisateurComponent } from './playlistutilisateur/playlistutilisateur.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
 
 @NgModule({
   declarations: [
@@ -50,8 +46,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginUserComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    TestConnexionComponent,
-    TestFirebaseComponent,
     HomeGameComponent,
     HeaderComponent,
     SpotifyLoginComponent,
@@ -59,19 +53,20 @@ import { MatDialogModule } from '@angular/material/dialog';
     GamePlayComponent,
     ProfileComponent,
     HomePageComponent,
-    HomePageConnecterComponent,
     PlaylistutilisateurComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule, 
-    RouterOutlet, 
-    RouterLink, 
-    RouterLinkActive, 
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
     HttpClientModule,
-    FormsModule, MatFormFieldModule, MatInputModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
@@ -82,14 +77,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDividerModule,
     MatCardModule,
     MatDialogModule,
-    
-    provideFirebaseApp(() => initializeApp(firebase)), 
-    provideAuth(() => getAuth()), 
-    provideFirestore(() => getFirestore()), //provideFirebaseApp(() => initializeApp({"projectId":"blindtest-71059","appId":"1:433409892438:web:070412168ef63aae30dbf7","storageBucket":"blindtest-71059.appspot.com","apiKey":"AIzaSyCNWYrPoy5Y-mMNIuNETnb6m1_IAd034tw","authDomain":"blindtest-71059.firebaseapp.com","messagingSenderId":"433409892438"})),
+
+    provideFirebaseApp(() => initializeApp(firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
   ],
-  providers: [
-    provideAnimationsAsync(),
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

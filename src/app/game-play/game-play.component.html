@@ -1,68 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>BlindTest</title>
-   
-</head>
-<body>
+  </head>
+
+  <body>
     <app-header></app-header>
-    <h1>BlindTest</h1>
-   
-    <div id="audioContainer">
-        <!-- Ceci est un autre commentaire HTML -->
-        <audio id="audioPlayer" controls>
-            <source [src]="trackURL" type="audio/mpeg">
+    <div class="main-container">
+      <div class="content-box">
+        <div class="audio-box">
+          <audio id="audioPlayer" controls>
+            <source [src]="trackURL" type="audio/mpeg" />
             Votre navigateur ne supporte pas l'élément audio.
-        </audio>
-        <button id="verifyButton" class="start-button" (click)="loadAndPlayNextTrack()">Vérifier et passer à la chanson suivante</button>
-    </div>
-  
-    <div>
-        <mat-form-field class="mat-form-field">
+          </audio>
+        </div>
+
+        <div class="label-box">
+          <mat-form-field class="mat-form-field">
             <mat-label for="input_song">Entrez le titre</mat-label>
-            <input matInput type="text" id="input_song" [(ngModel)]="input_song" class="mat-input">
-        </mat-form-field>
-    </div>
-   
-    <div>
-        <mat-form-field class="mat-form-field">
+            <input
+              matInput
+              type="text"
+              id="input_song"
+              [(ngModel)]="input_song"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="mat-form-field">
             <mat-label for="input_artist">Entrez l'artiste</mat-label>
-            <input matInput type="text" id="input_artist" [(ngModel)]="input_artist" class="mat-input">
-        </mat-form-field>
+            <input
+              matInput
+              type="text"
+              id="input_artist"
+              [(ngModel)]="input_artist"
+              class="mat-input"
+            />
+          </mat-form-field>
+        </div>
+
+        <div
+          id="verifyButton"
+          class="start-button"
+          (click)="loadAndPlayNextTrack()"
+        >
+          Vérifier et passer à la chanson suivante
+        </div>
+      </div>
     </div>
-  
-    <div id="resultText"></div>
 
-    <div id="reponsecorrecte"></div>
+    <div class="score-content">
+      <div class="content-box">
+        <div id="resultText" class="centered-text"></div>
+        <div id="reponsecorrecte" class="centered-text"></div>
+      </div>
 
-    <div id="gameEnd"></div>
-
-<!-- <app-score-page></app-score-page> -->
-
-   
-</body>
+      <div class="game-end-container">
+        <div id="gameEnd" class="game-end-text"></div>
+      </div>
+    </div>
+  </body>
 </html>
-
-   <!--
-   
- <audio id="audioPlayer" controls>
-        <source [src]="trackURL" type="audio/mpeg">
-        Votre navigateur ne supporte pas l'élément audio.
-    </audio>
-    <button id="verifyButton" (click)="loadAndPlayNextTrack()">Vérifier et passer à la chanson suivante</button>
-
-    <br>
-    <br>
-    <label for="textInput">Entrez un artiste : </label>
-    <input type="text" id="input_artist" [(ngModel)]="input_artist">
-
-    <label for="textInput">Entrez un titre : </label>
-    <input type="text" id="input_song" [(ngModel)]="input_song">
-
-    <div id="resultText"></div>
-
-    <div id="reponsecorrecte"></div>
-
-    <br>
-
--->

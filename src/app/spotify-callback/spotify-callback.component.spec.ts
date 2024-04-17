@@ -8,10 +8,9 @@ describe('SpotifyCallbackComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SpotifyCallbackComponent]
-    })
-    .compileComponents();
-    
+      declarations: [SpotifyCallbackComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SpotifyCallbackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

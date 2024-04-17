@@ -1,42 +1,41 @@
 body {
-    background-color: #f4f4f4;
-  }
-  
-  .login {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 15vh;
-    }
-    
-    mat-card {
-      width: 400px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    mat-card-content {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-    
-    mat-form-field {
-      width: 100%;
-    }
-    
-    .example-button-row {
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50 !important;
-    }
-    
-    button:hover {
-      background-color: #007bff;
-      color: #fff;
-    }
-    
+  background-color: #f4f4f4;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15vh;
+}
+
+mat-card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-content {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.example-button-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50 !important;
+}
+
+button:hover {
+  background-color: #007bff;
+  color: #fff;
+}

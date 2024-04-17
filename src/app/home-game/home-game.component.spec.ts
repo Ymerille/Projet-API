@@ -8,10 +8,9 @@ describe('HomeGameComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HomeGameComponent]
-    })
-    .compileComponents();
-    
+      declarations: [HomeGameComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(HomeGameComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,25 +1,25 @@
 nav {
-    background-color: #1ed760;
-    padding: 30px;
-    width: auto;
+  background-color: #1ed760;
+  padding: 30px;
+  width: auto;
 }
 
 nav img {
-    width: 70px;
+  width: 70px;
 }
 
 nav ul {
-    float: right;
-    list-style-type: none;
+  float: right;
+  list-style-type: none;
 }
 
 ul li {
-    display: inline-block;
-    padding: 10px;
+  display: inline-block;
+  padding: 10px;
 }
 
-li a{
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
+li a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }

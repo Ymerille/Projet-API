@@ -1,27 +1,43 @@
 body {
-    background-color: #f4f4f4;
+  background-color: #f4f4f4;
 }
 
 .profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15vh;
-    
-  }
-
-mat-card{
-    width: 50vh;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15vh;
 }
 
-button{
-    margin: 2vh;
-    background-color: #4CAF50 !important;
+mat-card {
+  width: 50vh;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  margin: 2vh;
+  background-color: #4caf50 !important;
 }
 
 .text {
-    margin-top: 20px;
+  margin-top: 20px;
+}
+
+.avatar-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.avatar-container img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }

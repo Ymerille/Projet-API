@@ -1,3 +1,3 @@
 export interface Spotify {
-    id: string
+  id: string;
 }

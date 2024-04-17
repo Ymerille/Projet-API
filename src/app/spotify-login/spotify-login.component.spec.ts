@@ -8,10 +8,9 @@ describe('SpotifyLoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SpotifyLoginComponent]
-    })
-    .compileComponents();
-    
+      declarations: [SpotifyLoginComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(SpotifyLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

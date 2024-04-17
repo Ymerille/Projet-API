@@ -8,10 +8,9 @@ describe('PlaylistutilisateurComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PlaylistutilisateurComponent]
-    })
-    .compileComponents();
-    
+      declarations: [PlaylistutilisateurComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(PlaylistutilisateurComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

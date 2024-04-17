@@ -1,19 +1,27 @@
 <body>
-    <app-header></app-header>
-    <div class="profile">
-        <mat-card>
-          <mat-card-content>PROFIL</mat-card-content>
-          <mat-card-content class="text">Nom : {{lastName}}
-          </mat-card-content>
-          <mat-card-content class="text">Prénom : {{firstName}}
-          </mat-card-content>
-          <mat-card-content class="text">Email : {{email}}
-          </mat-card-content>
-          <section>
-            <div class="example-button-row">
-              <button mat-flat-button color="primary" (click)="authService.signOut()">Se déconnecter</button>
-            </div>
-          </section>
-        </mat-card>
+  <app-header></app-header>
+  <div class="profile">
+    <mat-card>
+      <mat-card-content>PROFIL</mat-card-content>
+      <div class="avatar-container">
+        <img id="avatar" src="#" alt="avatar" />
       </div>
+      <mat-card-content class="text">Nom : {{ lastName }} </mat-card-content>
+      <mat-card-content class="text"
+        >Prénom : {{ firstName }}
+      </mat-card-content>
+      <mat-card-content class="text">Email : {{ email }} </mat-card-content>
+      <section>
+        <div class="example-button-row">
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="authService.signOut()"
+          >
+            Se déconnecter
+          </button>
+        </div>
+      </section>
+    </mat-card>
+  </div>
 </body>

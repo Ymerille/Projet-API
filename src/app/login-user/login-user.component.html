@@ -5,20 +5,25 @@
       <mat-card-content>Connexion : </mat-card-content>
       <mat-form-field>
         <mat-label>Email : </mat-label>
-        <input matInput type="email" #userEmail>
+        <input matInput type="email" #userEmail />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Mot de passe : </mat-label>
-        <input matInput type="password" #userPassword>
+        <input matInput type="password" #userPassword />
       </mat-form-field>
       <section>
         <a href="/forgot-password"><p>Mot de passe oublié ?</p></a>
         <p>Pas de compte ? <a href="/create-user">Cliquez ici !</a></p>
         <div class="example-button-row">
-          <button mat-flat-button color="primary" (click)="authService.signIn(userEmail.value, userPassword.value)">Se connecter</button>
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="authService.signIn(userEmail.value, userPassword.value)"
+          >
+            Se connecter
+          </button>
         </div>
       </section>
     </mat-card>
   </div>
 </body>
-

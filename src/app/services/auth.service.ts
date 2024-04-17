@@ -94,12 +94,12 @@ export class AuthService {
     const user = this.auth.currentUser;
     if (user) {
       updatePassword(user, newPassword)
-      .then(() => {
-        window.alert('Mot de passe modifié !');
-      })
-      .catch((error) => {
-        window.alert(error);
-      });
+        .then(() => {
+          window.alert('Mot de passe modifié !');
+        })
+        .catch((error) => {
+          window.alert(error);
+        });
     }
   }
 
@@ -107,12 +107,12 @@ export class AuthService {
     const user = this.auth.currentUser;
     if (user) {
       updateEmail(user, newEmail)
-      .then(() => {
-        window.alert('Email modifié !');
-      })
-      .catch((error) => {
-        window.alert(error);
-      });
+        .then(() => {
+          window.alert('Email modifié !');
+        })
+        .catch((error) => {
+          window.alert(error);
+        });
     }
   }
 

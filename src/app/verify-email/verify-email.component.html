@@ -8,16 +8,21 @@
           >.
         </p>
         <p class="text-center">
-          Please check your email and click on the link to verfiy your email address.
+          Please check your email and click on the link to verfiy your email
+          address.
         </p>
         <section>
           <div class="example-button-row">
-            <button mat-flat-button color="primary" (click)="authService.sendVerificationMail()">Envoyer de nouveau le mail de confirmation</button>
+            <button
+              mat-flat-button
+              color="primary"
+              (click)="authService.sendVerificationMail()"
+            >
+              Envoyer de nouveau le mail de confirmation
+            </button>
           </div>
         </section>
       </mat-card-content>
     </mat-card>
   </div>
 </body>
-
-
