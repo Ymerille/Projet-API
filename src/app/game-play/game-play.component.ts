@@ -4,6 +4,7 @@ import { PlaylistService } from '../services/playlist.service';
 import { SpotifyAuthService } from '../spotify-auth.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { concatMap, defer, of } from 'rxjs';
 @Component({
   selector: 'app-game-play',
   templateUrl: './game-play.component.html',
@@ -22,7 +23,8 @@ export class GamePlayComponent implements OnInit {
   constructor(private spotifyService: SpotifyService,
               private playlistService: PlaylistService,
               private spotifyAuthService: SpotifyAuthService,
-              private router: Router
+              private router: Router,
+              private dialog: MatDialog,
             ) {}
 
   ngOnInit(): void {
@@ -53,12 +55,16 @@ export class GamePlayComponent implements OnInit {
       //this.indice();
       this.VerifText();
 
-      if (this.total_tracks == 5) {
-        this.router.navigate(['/score'], { queryParams: { score: this.score } });
-      }
+      // if (this.total_tracks == 5) {
+      //   this.router.navigate(['/score'], { queryParams: { score: this.score } });
+      // }
+      
       
   }
   else{
+    this.gameEnd();
+      
+
     // this.VerifText();
     // this.router.navigate(['/score'], { queryParams: { score: this.score } });
 
@@ -97,23 +103,20 @@ if (this.currentTrackIndex === 0) {
           this.score += 1;
           console.log("Seul le titre est correct : " + this.score);
           this.updateScoreText(this.score,"Seul le titre est correct !");
-      } else {
-          console.log("Pas le bon titre");
-          
-      }
+      } 
 
       // Vérification si seulement l'artiste est correct
-      if (artistNames.includes(this.input_artist.toLowerCase()) && this.input_artist.toLowerCase() != '') {
+      else if (artistNames.includes(this.input_artist.toLowerCase()) && this.input_artist.toLowerCase() != '') {
           this.score += 1;
           console.log("Seul l'artiste est correct : " + this.score);
           this.updateScoreText(this.score,"Seul l'artiste est correct !");
-      } else {
-          console.log("Pas le bon artiste");
-          
-      }
+      } 
         //affichage de la réponse
-
-        this.artiste_song_correcte(artistNames,trackName);    
+      else {
+        this.updateScoreText(this.score,"L'artiste et le titre sont faux !");
+      }
+        
+      this.artiste_song_correcte(artistNames,trackName);    
 
   }
 
@@ -137,14 +140,14 @@ if (this.currentTrackIndex === 0) {
       } 
 
       // Vérification si seulement l'artiste est correct
-      if (artistNames.includes(this.input_artist.toLowerCase()) && this.input_artist.toLowerCase() != '') {
+      else if (artistNames.includes(this.input_artist.toLowerCase()) && this.input_artist.toLowerCase() != '') {
           this.score += 1;
           console.log("Seul l'artiste est correct : " + this.score);
           this.updateScoreText(this.score,"Seul l'artiste est correct !");
       } 
 
     
-      else{
+      else {
         this.updateScoreText(this.score,"L'artiste et le titre sont faux !");
       }
 
@@ -184,5 +187,15 @@ public artiste_song_correcte(artiste: string, song: string) {
       resultTextElement.innerText = "L'artiste est " + artiste + " et le titre est " + song;
     }
   }
+}
+
+public gameEnd() {
+  // if (this.currentTrackIndex !== 0) { // Vérification que l'indice n'est pas égal à 0
+    const resultTextElement = document.getElementById('gameEnd');
+    if (resultTextElement) {
+      // Si l'élément existe, mettre à jour son texte avec le score
+      resultTextElement.innerText = "La partie est terminée, voici votre score : " + this.score;
+    }
+  //}
 }
 }
