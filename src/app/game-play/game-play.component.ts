@@ -150,6 +150,7 @@ export class GamePlayComponent implements OnInit {
             this.score += 2;
             console.log('Les deux sont corrects : ' + this.score);
             this.updateScoreText(this.score, 'Les deux sont corrects !');
+            this.artiste_song_correcte(artistNames,trackName);
           } else {
             // Vérification si seulement le titre est correct
             if (

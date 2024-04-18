@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class SpotifyAuthService {
   private clientID: string = '366f5760f2954c9bbf65f7c89437386a';
-  private redirectURI: string = 'http://localhost:5173/callback';
+  //private redirectURI: string = 'http://localhost:5173/callback';
+  private redirectURI: string = 'https://blindtest-71059.web.app/callback';
   private tokenEndpoint: string = 'https://accounts.spotify.com/api/token';
   private authEndpoint: string = 'https://accounts.spotify.com/authorize';
   private accessTokenKey: string = 'spotify_access_token';
